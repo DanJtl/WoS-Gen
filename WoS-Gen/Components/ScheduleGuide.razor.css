@@ -119,3 +119,16 @@ a:hover, a:focus {
 .guide-icon {
     font-size: 3rem;
 }
+
+.button {
+    background-color: #FFEA20;
+    color: black;
+    border: 2px solid black;
+    font-size: 2rem;
+    border-radius: 1rem;
+    box-shadow: 10px 5px 5px;
+}
+
+.button:hover {
+    filter: brightness(0.85);
+}
