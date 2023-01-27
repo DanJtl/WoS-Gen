@@ -1,2 +1,12 @@
-﻿body {
+﻿.footer {
+    width: 100%;
+    background-color: #111827;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer p {
+    color: white;
 }
