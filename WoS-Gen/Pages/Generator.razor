@@ -30,18 +30,35 @@
             </div>
         </div>
         <fieldset class="row mb-3">
+            <legend class="col-form-label col-sm-2 pt-0">Goal:</legend>
+            <div class="col-sm-10 d-flex gap-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="goal" id="goal1" value="option1" checked>
+                    <label class="form-check-label" for="goal1">
+                        Build Muscles
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="goal" id="goal2" value="option2">
+                    <label class="form-check-label" for="goal2">
+                        Lose Weight
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="row mb-3">
             <legend class="col-form-label col-sm-2 pt-0">Location:</legend>
             <div class="col-sm-10 d-flex gap-4">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                     <label class="form-check-label" for="gridRadios1">
-                        GYM
+                        Gym
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                     <label class="form-check-label" for="gridRadios2">
-                        HOME
+                        Home
                     </label>
                 </div>
             </div>
@@ -67,6 +84,10 @@
             <button type="submit" class="btn btn-primary">Generate Workout Schedule</button>
         </div>
     </form>
+</section>
+
+<section>
+    <Schedule />
 </section>
 
 @code {
