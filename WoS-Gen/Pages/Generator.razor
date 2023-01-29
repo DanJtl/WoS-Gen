@@ -1,5 +1,6 @@
 ﻿@page "/generator"
 @using WoS_Gen
+@using WoS_Gen.Models
 
 <PageTitle>Schedule Generator</PageTitle>
 
@@ -91,9 +92,6 @@
 </section>
 
 @code {
-    private void GenerateSchedule()
-    {
-        
-    }
+    private User user = new User("1", "1", "1", "1");
 
 }
