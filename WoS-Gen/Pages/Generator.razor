@@ -34,6 +34,17 @@
             <label for="goal" class="col-sm-2 col-form-label">Goal:</label>
             <div class="col-sm-10">
                 <InputSelect @bind-Value="user.WorkoutGoal">
+                    <option value="">Choose your goal...</option>
+                    <option value="LoseWeight">LoseWeight</option>
+                    <option value="BuildMuscles">BuildMuscles</option>
+                </InputSelect>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="location" class="col-sm-2 col-form-label">Location:</label>
+            <div class="col-sm-10">
+                <InputSelect @bind-Value="user.Location">
+                    <option value="">Choose your location</option>
                     <option value="Gym">Gym</option>
                     <option value="Home">Home</option>
                 </InputSelect>
@@ -45,11 +56,13 @@
     </EditForm>
 </section>
 
+
 @foreach (var user in users)
 {
     <p>@user.Name</p>
     <p>@user.Email</p>
     <p>@user.WorkoutGoal</p>
+    <p>@user.Location</p>
 }
 
 <section>
@@ -77,6 +90,19 @@
         {
             users.Add(user);
             CreateUser();
+        }
+    }
+
+    private void GenerateWorkoutPlan()
+    {
+        if (user.WorkoutGoal == "LoseWeight")
+        {
+            
+        }
+        else if (user.WorkoutGoal == "BuildMuscles")
+        {
+            
+
         }
     }
 

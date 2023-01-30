@@ -15,7 +15,7 @@ namespace WoS_Gen.Models
         
         public void GenerateSchedule(User user)
         {
-            if (user.WorkoutGoal == "Lose Weight")
+            if (user.WorkoutGoal == "LoseWeight")
             {
                 if (user.Location == "Home")
                 {
@@ -26,7 +26,7 @@ namespace WoS_Gen.Models
 
                 }
             }
-            else if (user.WorkoutGoal == "Build Muscles")
+            else if (user.WorkoutGoal == "BuildMuscles")
             {
                 if (user.Location == "Home")
                 {
