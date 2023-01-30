@@ -56,7 +56,6 @@
     </EditForm>
 </section>
 
-
 @foreach (var user in users)
 {
     <p>@user.Name</p>
@@ -70,27 +69,14 @@
 </section>
 
 @code {
-    static List<User> users = new List<User>
-    {
-        new User
-        {
-            Name = "",
-            Email = "",
-            WorkoutGoal = "",
-            Location = "",
-        }
-    };
-
-    User user = new User();
-    bool isNew = true;
+    static List<User> users = new List<User>();
+    User user = new User("", "", "", "");
 
     private void HandleSubmit()
     {
-        if (isNew)
-        {
-            users.Add(user);
-            CreateUser();
-        }
+        User newUser = new User(user.Name, user.Email, user.WorkoutGoal, user.Location);
+        users.Add(newUser);
+        user = new User("", "", "", "");
     }
 
     private void GenerateWorkoutPlan()
@@ -104,11 +90,5 @@
             
 
         }
-    }
-
-    private void CreateUser()
-    {
-        user = new User();
-        isNew = true;
     }
 }
