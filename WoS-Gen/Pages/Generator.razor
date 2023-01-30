@@ -71,24 +71,18 @@
 @code {
     static List<User> users = new List<User>();
     User user = new User("", "", "", "");
+    WorkoutSchedule schedule = new WorkoutSchedule();
 
     private void HandleSubmit()
     {
         User newUser = new User(user.Name, user.Email, user.WorkoutGoal, user.Location);
         users.Add(newUser);
+        GenerateWorkoutPlan();
         user = new User("", "", "", "");
     }
 
     private void GenerateWorkoutPlan()
     {
-        if (user.WorkoutGoal == "LoseWeight")
-        {
-            
-        }
-        else if (user.WorkoutGoal == "BuildMuscles")
-        {
-            
-
-        }
+        schedule.GeneratePlan(user.WorkoutGoal, user.Location);
     }
 }
