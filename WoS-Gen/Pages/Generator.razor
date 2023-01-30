@@ -17,81 +17,72 @@
 </section>
 
 <section class="container w-50 p-4 my-5">
-    <form>
+    <EditForm Model="user" OnInvalidSubmit="HandleSubmit">
         <div class="row mb-3">
-            <label for="fullname" class="col-sm-2 col-form-label">Fullname:</label>
+            <label for="name" class="col-sm-2 col-form-label">Fullname:</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="fullname">
+                <InputText id="name" @bind-Value="user.Name" class="form-control" required></InputText>
             </div>
         </div>
         <div class="row mb-3">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+            <label for="email" class="col-sm-2 col-form-label">Email:</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3">
+                <InputText id="email" @bind-Value="user.Email" class="form-control" type="email" required></InputText>
             </div>
         </div>
-        <fieldset class="row mb-3">
-            <legend class="col-form-label col-sm-2 pt-0">Goal:</legend>
-            <div class="col-sm-10 d-flex gap-4">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="goal" id="goal1" value="option1" checked>
-                    <label class="form-check-label" for="goal1">
-                        Build Muscles
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="goal" id="goal2" value="option2">
-                    <label class="form-check-label" for="goal2">
-                        Lose Weight
-                    </label>
-                </div>
+        <div class="row mb-3">
+            <label for="goal" class="col-sm-2 col-form-label">Goal:</label>
+            <div class="col-sm-10">
+                <InputSelect @bind-Value="user.WorkoutGoal">
+                    <option value="Gym">Gym</option>
+                    <option value="Home">Home</option>
+                </InputSelect>
             </div>
-        </fieldset>
-        <fieldset class="row mb-3">
-            <legend class="col-form-label col-sm-2 pt-0">Location:</legend>
-            <div class="col-sm-10 d-flex gap-4">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                    <label class="form-check-label" for="gridRadios1">
-                        Gym
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                    <label class="form-check-label" for="gridRadios2">
-                        Home
-                    </label>
-                </div>
-            </div>
-        </fieldset>
-        <fieldset class="row mb-3">
-            <legend class="col-form-label col-sm-2 pt-0">Gender:</legend>
-            <div class="col-sm-10 d-flex gap-4">
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="grid" id="grid1" value="option1" checked>
-                    <label class="form-check-label" for="grid1">
-                        Male
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="grid" id="grid2" value="option2">
-                    <label class="form-check-label" for="grid2">
-                        Female
-                    </label>
-                </div>
-            </div>
-        </fieldset>
+        </div>
         <div class="d-flex flex-column justify-content-center">
-            <button @onclick="GenerateSchedule" class="btn btn-primary">Generate Workout Schedule</button>
+            <button type="submit" @onclick="HandleSubmit" class="btn btn-primary">Create Schedule</button>
         </div>
-    </form>
+    </EditForm>
 </section>
+
+@foreach (var user in users)
+{
+    <p>@user.Name</p>
+    <p>@user.Email</p>
+    <p>@user.WorkoutGoal</p>
+}
 
 <section>
     <Schedule />
 </section>
 
 @code {
-    private User user = new User("1", "1", "1", "1");
+    static List<User> users = new List<User>
+    {
+        new User
+        {
+            Name = "",
+            Email = "",
+            WorkoutGoal = "",
+            Location = "",
+        }
+    };
 
+    User user = new User();
+    bool isNew = true;
+
+    private void HandleSubmit()
+    {
+        if (isNew)
+        {
+            users.Add(user);
+            CreateUser();
+        }
+    }
+
+    private void CreateUser()
+    {
+        user = new User();
+        isNew = true;
+    }
 }
