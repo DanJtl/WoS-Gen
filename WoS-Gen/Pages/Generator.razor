@@ -66,26 +66,23 @@
     </EditForm>
 </section>
 
-
-
-
 <section class="container">
     <h1 class="text-center">Hi @user.Name here is your workout schedule!</h1>
+    @{
+        var dayIndex = 0;
+        List<string> weekDays = new List<string>() {
+            "Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday", "Sunday" };
+    }
     @foreach (var user in users)
     {
         @foreach (var workout in schedule.GeneratePlan(user.WorkoutGoal, user.Location, user.Experience))
         {
-            var index = schedule.GeneratePlan(user.WorkoutGoal, user.Location, user.Experience).IndexOf(workout);
-            List<string> weekDays = new List<string>() {
-                "Monday", "Tuesday", "Wednesday", "Thursday",
-                "Friday", "Saturday", "Sunday" };
-            <Schedule Day="@weekDays[index]"
+            <Schedule Day="@weekDays[dayIndex]"
               Workout="@workout" />
+            dayIndex++;
         }
     }
-   
-    
-
 </section>
 
 @code {
@@ -103,9 +100,18 @@
         }
         else
         {
-            User newUser = new User(user.Name, user.Email, user.WorkoutGoal, user.Location, user.Experience);
-            users.Add(newUser);
-            user = new User("", "", "", "", "");
+            // Check if a user with the same name and email exists in the users list
+            User existingUser = users.Find(u => u.Name == user.Name && u.Email == user.Email);
+            if (existingUser == null)
+            {
+                // If not, add the user to the list and generate a new schedule
+                users.Add(user);
+            }
+            else
+            {
+                // If yes, retrieve the existing schedule
+                user = existingUser;
+            }
         }
     }
 }
