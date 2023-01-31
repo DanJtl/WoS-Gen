@@ -66,8 +66,8 @@
     </EditForm>
 </section>
 
-<section class="container">
-    <h1 class="text-center">Hi @user.Name here is your workout schedule!</h1>
+<section class="container pt-3 ">
+    <h3 class="text-center mb-3">Hi @user.Name here is your workout schedule!</h3>
     @{
         var dayIndex = 0;
         List<string> weekDays = new List<string>() {
@@ -101,7 +101,7 @@
         else
         {
             // Check if a user with the same name and email exists in the users list
-            User existingUser = users.Find(u => u.Name == user.Name && u.Email == user.Email);
+            User? existingUser = users.Find(u => u.Name == user.Name && u.Email == user.Email);
             if (existingUser == null)
             {
                 // If not, add the user to the list and generate a new schedule
