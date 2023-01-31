@@ -2,7 +2,7 @@
 {
     public class User
     {
-        // Properties for name, email, workoutgoal and location
+        // Properties for name, email, workoutgoal, location and experience
         public string Name { get; set; }
         public string Email { get; set; }
         public string WorkoutGoal { get; set; }
