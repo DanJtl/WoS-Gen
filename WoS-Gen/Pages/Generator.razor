@@ -62,7 +62,12 @@
     <p>@user.Email</p>
     <p>@user.WorkoutGoal</p>
     <p>@user.Location</p>
+    @foreach (var workout in schedule.GeneratePlan(user.WorkoutGoal, user.Location))
+    {
+        <p>@workout</p>
+    }
 }
+
 
 <section>
     <Schedule />
@@ -77,12 +82,6 @@
     {
         User newUser = new User(user.Name, user.Email, user.WorkoutGoal, user.Location);
         users.Add(newUser);
-        GenerateWorkoutPlan();
         user = new User("", "", "", "");
-    }
-
-    private void GenerateWorkoutPlan()
-    {
-        schedule.GeneratePlan(user.WorkoutGoal, user.Location);
     }
 }
