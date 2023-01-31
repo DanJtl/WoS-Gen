@@ -14,44 +14,44 @@ namespace WoS_Gen.Models
                 {
                     if (experience == "Beginner")
                     {
-                        workoutPlan.Add("Monday: Cardio (30 minutes)");
-                        workoutPlan.Add("Tuesday: Rest day");
-                        workoutPlan.Add("Wednesday: Bodyweight exercises (45 minutes)");
-                        workoutPlan.Add("Thursday: Rest day");
-                        workoutPlan.Add("Friday: Yoga (60 minutes)");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Rest day");
+                        workoutPlan.Add("Cardio (30 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Bodyweight exercises (45 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Yoga (60 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Rest day");
                     }
                     else if (experience == "Novice")
-                        workoutPlan.Add("Monday: Cardio (30 minutes)");
-                        workoutPlan.Add("Tuesday: Bodyweight exercises (45 minutes)");
-                        workoutPlan.Add("Wednesday: Rest day");
-                        workoutPlan.Add("Thursday: Cardio (30 minutes)");
-                        workoutPlan.Add("Friday: Bodyweight exercises (45 minutes)");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Yoga (60 minutes)");
+                        workoutPlan.Add("Cardio (30 minutes)");
+                        workoutPlan.Add("Bodyweight exercises (45 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Cardio (30 minutes)");
+                        workoutPlan.Add("Bodyweight exercises (45 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Yoga (60 minutes)");
                 }
                 else if (location == "Gym")
                 {
                     if (experience == "Beginner")
                     {
-                        workoutPlan.Add("Monday: Cardio (30 minutes)");
-                        workoutPlan.Add("Tuesday: Rest day");
-                        workoutPlan.Add("Wednesday: Yoga (60 minutes)");
-                        workoutPlan.Add("Thursday: Rest day");
-                        workoutPlan.Add("Friday: Strength training (45 minutes)");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Rest day");
+                        workoutPlan.Add("Cardio (30 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Yoga (60 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Strength training (45 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Rest day");
                     }
                     else if (experience == "Novice")
                     {
-                        workoutPlan.Add("Monday: Cardio (30 minutes)");
-                        workoutPlan.Add("Tuesday: Strength training (45 minutes)");
-                        workoutPlan.Add("Wednesday: Rest day");
-                        workoutPlan.Add("Thursday: Cardio (30 minutes)");
-                        workoutPlan.Add("Friday: Strength training (45 minutes)");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Yoga (60 minutes)");
+                        workoutPlan.Add("Cardio (30 minutes)");
+                        workoutPlan.Add("Strength training (45 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Cardio (30 minutes)");
+                        workoutPlan.Add("Strength training (45 minutes)");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Yoga (60 minutes)");
                     }
                 }
             }
@@ -61,46 +61,46 @@ namespace WoS_Gen.Models
                 {
                     if (experience == "Beginner")
                     {
-                        workoutPlan.Add("Monday: Upper-body workout");
-                        workoutPlan.Add("Tuesday: Rest day");
-                        workoutPlan.Add("Wednesday: Lower-body workout");
-                        workoutPlan.Add("Thursday: Rest day");
-                        workoutPlan.Add("Friday: Full-body workout");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Rest day");
+                        workoutPlan.Add("Upper-body workout");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Lower-body workout");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Full-body workout");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Rest day");
                     }
                     else if (experience == "Novice")
                     {
-                        workoutPlan.Add("Monday: Upper-body workout");
-                        workoutPlan.Add("Tuesday: Lower-body workout");
-                        workoutPlan.Add("Wednesday: Rest day");
-                        workoutPlan.Add("Thursday: Upper-body workout");
-                        workoutPlan.Add("Friday: Lower-body workout");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Full-body workout");
+                        workoutPlan.Add("Upper-body workout");
+                        workoutPlan.Add("Lower-body workout");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Upper-body workout");
+                        workoutPlan.Add("Lower-body workout");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Full-body workout");
                     }
                 }
                 else if (location == "Gym")
                 {
                     if (experience == "Beginner")
                     {
-                        workoutPlan.Add("Monday: Chest, Shoulders and Triceps");
-                        workoutPlan.Add("Tuesday: Rest day");
-                        workoutPlan.Add("Wednesday: Back, Abs and Biceps");
-                        workoutPlan.Add("Thursday: Rest day");
-                        workoutPlan.Add("Friday: Leg day");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Rest day");
+                        workoutPlan.Add("Chest, Shoulders and Triceps");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Back, Abs and Biceps");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Leg day");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Rest day");
                     }
                     else if (experience == "Novice")
                     {
-                        workoutPlan.Add("Monday: Chest and Triceps");
-                        workoutPlan.Add("Tuesday: Back and Biceps");
-                        workoutPlan.Add("Wednesday: Rest day");
-                        workoutPlan.Add("Thursday: Legs and Abs");
-                        workoutPlan.Add("Friday: Shoulders and Arms");
-                        workoutPlan.Add("Saturday: Rest day");
-                        workoutPlan.Add("Sunday: Full-body workout");
+                        workoutPlan.Add("Chest and Triceps");
+                        workoutPlan.Add("Back and Biceps");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Legs and Abs");
+                        workoutPlan.Add("Shoulders and Arms");
+                        workoutPlan.Add("Rest day");
+                        workoutPlan.Add("Full-body workout");
                     }
                 }
             }

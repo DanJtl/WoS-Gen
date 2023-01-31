@@ -66,21 +66,26 @@
     </EditForm>
 </section>
 
-@foreach (var user in users)
-{
-    <p>@user.Name</p>
-    <p>@user.Email</p>
-    <p>@user.WorkoutGoal</p>
-    <p>@user.Location</p>
-    @foreach (var workout in schedule.GeneratePlan(user.WorkoutGoal, user.Location, user.Experience))
+
+
+
+<section class="container">
+    <h1 class="text-center">Hi @user.Name here is your workout schedule!</h1>
+    @foreach (var user in users)
     {
-        <p>@workout</p>
+        @foreach (var workout in schedule.GeneratePlan(user.WorkoutGoal, user.Location, user.Experience))
+        {
+            var index = schedule.GeneratePlan(user.WorkoutGoal, user.Location, user.Experience).IndexOf(workout);
+            List<string> weekDays = new List<string>() {
+                "Monday", "Tuesday", "Wednesday", "Thursday",
+                "Friday", "Saturday", "Sunday" };
+            <Schedule Day="@weekDays[index]"
+              Workout="@workout" />
+        }
     }
-}
+   
+    
 
-
-<section>
-    <Schedule />
 </section>
 
 @code {
