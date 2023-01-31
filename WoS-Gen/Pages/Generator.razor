@@ -90,7 +90,9 @@
 
     private void HandleSubmit()
     {
-        if (string.IsNullOrWhiteSpace(user.Name) || string.IsNullOrWhiteSpace(user.Email))
+        if (string.IsNullOrWhiteSpace(user.Name) || string.IsNullOrWhiteSpace(user.Email) || 
+            string.IsNullOrWhiteSpace(user.Location) || string.IsNullOrWhiteSpace(user.WorkoutGoal) || 
+            string.IsNullOrWhiteSpace(user.Experience))
         {
             return;
         }
