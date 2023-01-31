@@ -33,7 +33,7 @@
         <div class="row mb-3">
             <label for="goal" class="col-sm-2 col-form-label">Goal:</label>
             <div class="col-sm-10 pt-2">
-                <InputSelect @bind-Value="user.WorkoutGoal">
+                <InputSelect required @bind-Value="user.WorkoutGoal">
                     <option value="">Choose your goal...</option>
                     <option value="LoseWeight">LoseWeight</option>
                     <option value="BuildMuscles">BuildMuscles</option>
@@ -43,7 +43,7 @@
         <div class="row mb-3">
             <label for="location" class="col-sm-2 col-form-label">Location:</label>
             <div class="col-sm-10 pt-2">
-                <InputSelect @bind-Value="user.Location">
+                <InputSelect required @bind-Value="user.Location">
                     <option value="">Choose your location</option>
                     <option value="Gym">Gym</option>
                     <option value="Home">Home</option>
@@ -53,7 +53,7 @@
         <div class="row mb-3">
             <label for="experience" class="col-sm-2 col-form-label">Experience:</label>
             <div class="col-sm-10 pt-2">
-                <InputSelect @bind-Value="user.Experience">
+                <InputSelect required @bind-Value="user.Experience">
                     <option value="">Your experience</option>
                     <option value="Beginner">Beginner</option>
                     <option value="Novice">Novice</option>
@@ -90,8 +90,15 @@
 
     private void HandleSubmit()
     {
-        User newUser = new User(user.Name, user.Email, user.WorkoutGoal, user.Location, user.Experience);
-        users.Add(newUser);
-        user = new User("", "", "", "", "");
+        if (string.IsNullOrWhiteSpace(user.Name) || string.IsNullOrWhiteSpace(user.Email))
+        {
+            return;
+        }
+        else
+        {
+            User newUser = new User(user.Name, user.Email, user.WorkoutGoal, user.Location, user.Experience);
+            users.Add(newUser);
+            user = new User("", "", "", "", "");
+        }
     }
 }
