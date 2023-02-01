@@ -1,6 +1,7 @@
 ﻿@page "/generator"
 @using WoS_Gen
 @using WoS_Gen.Models
+@using System.Threading.Tasks;
 
 <PageTitle>Schedule Generator</PageTitle>
 
@@ -61,36 +62,48 @@
             </div>
         </div>
         <div class="d-flex flex-column justify-content-center">
-            <button type="submit" @onclick="HandleSubmit" class="btn btn-primary">Create Schedule</button>
+            <a type="submit" @onclick="HandleSubmit" class="btn btn-lg btn-primary p-2 fw-bolder">Create Schedule <i class="bi bi-calendar-event"></i></a>
         </div>
     </EditForm>
 </section>
 
 <section class="container pt-3 ">
-    <h3 class="text-center mb-3">Hi @user.Name here is your workout schedule!</h3>
     @{
         var dayIndex = 0;
         List<string> weekDays = new List<string>() {
             "Monday", "Tuesday", "Wednesday", "Thursday",
             "Friday", "Saturday", "Sunday" };
     }
+
+    @if (showSpinner)
+    {
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    
     @foreach (var user in users)
     {
+        <h3 class="text-center mb-3">Hi @user.Name! Here is your workout schedule:</h3>
         @foreach (var workout in schedule.GeneratePlan(user.WorkoutGoal, user.Location, user.Experience))
         {
             <Schedule Day="@weekDays[dayIndex]"
-              Workout="@workout" />
+                Workout="@workout" />
             dayIndex++;
         }
     }
+    
 </section>
 
 @code {
     static List<User> users = new List<User>();
     User user = new User("", "", "", "", "");
     WorkoutSchedule schedule = new WorkoutSchedule();
+    private bool showSpinner = false;
 
-    private void HandleSubmit()
+    private async void HandleSubmit()
     {
         if (string.IsNullOrWhiteSpace(user.Name) || string.IsNullOrWhiteSpace(user.Email) || 
             string.IsNullOrWhiteSpace(user.Location) || string.IsNullOrWhiteSpace(user.WorkoutGoal) || 
@@ -104,8 +117,12 @@
             User? existingUser = users.Find(u => u.Name == user.Name && u.Email == user.Email);
             if (existingUser == null)
             {
-                // If not, add the user to the list and generate a new schedule
+                // If not, add the user to the list and generate a new schedule, with a spinner showing before schedule appears
+                showSpinner = true;
+                await Task.Delay(2500);
+                showSpinner = false;
                 users.Add(user);
+                StateHasChanged();
             }
             else
             {
