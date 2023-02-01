@@ -123,6 +123,7 @@
                 showSpinner = false;
                 users.Add(user);
                 StateHasChanged();
+                
             }
             else
             {
@@ -130,5 +131,7 @@
                 user = existingUser;
             }
         }
+        int lastItem = users.Count - 1;
+        users.RemoveAt(lastItem);
     }
 }
