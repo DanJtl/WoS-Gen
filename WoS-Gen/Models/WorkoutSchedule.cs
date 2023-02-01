@@ -23,6 +23,7 @@ namespace WoS_Gen.Models
                         workoutPlan.Add("Rest day");
                     }
                     else if (experience == "Novice")
+                    {
                         workoutPlan.Add("Cardio (30 minutes)");
                         workoutPlan.Add("Bodyweight exercises (45 minutes)");
                         workoutPlan.Add("Rest day");
@@ -30,6 +31,7 @@ namespace WoS_Gen.Models
                         workoutPlan.Add("Bodyweight exercises (45 minutes)");
                         workoutPlan.Add("Rest day");
                         workoutPlan.Add("Yoga (60 minutes)");
+                    }
                 }
                 else if (location == "Gym")
                 {
