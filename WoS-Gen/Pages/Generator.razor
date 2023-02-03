@@ -98,11 +98,15 @@
 </section>
 
 @code {
+    // Declare a static list of User objects, and initialize a User and WorkoutSchedule object
     static List<User> users = new List<User>();
     User user = new User("", "", "", "", "");
     WorkoutSchedule schedule = new WorkoutSchedule();
+
+    // Declare a boolean variable to track the visibility of the spinner
     private bool showSpinner = false;
 
+    // Async method to handle the 'form submission'
     private async void HandleSubmit()
     {
         if (string.IsNullOrWhiteSpace(user.Name) || string.IsNullOrWhiteSpace(user.Email) || 
@@ -117,13 +121,13 @@
             User? existingUser = users.Find(u => u.Name == user.Name && u.Email == user.Email);
             if (existingUser == null)
             {
-                // If not, add the user to the list and generate a new schedule, with a spinner showing before schedule appears
+                // If not, add the user to the list and generate a new schedule, with a 'spinner' showing before schedule appears
                 showSpinner = true;
                 await Task.Delay(2500);
                 showSpinner = false;
                 users.Add(user);
+                // Call the StateHasChanged method to update the UI
                 StateHasChanged();
-                
             }
             else
             {
@@ -131,6 +135,7 @@
                 user = existingUser;
             }
         }
+        // Remove the last item from the users list
         int lastItem = users.Count - 1;
         users.RemoveAt(lastItem);
     }

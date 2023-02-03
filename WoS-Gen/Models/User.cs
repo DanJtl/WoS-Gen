@@ -9,6 +9,7 @@
         public string Location { get; set; }
         public string Experience { get; set; }
 
+        // Constructor to initialize a user object with name, email, workout goal, location, and experience
         public User(string userName, string email, string workoutGoal, string location, string experience)
         {
             Name = userName;
@@ -18,5 +19,4 @@
             Experience = experience;
         }
     }
-    
 }

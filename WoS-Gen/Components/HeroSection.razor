@@ -12,12 +12,19 @@
 </div>
 
 @code {
+    // Title of the component
     [Parameter]
     public string? Title { get; set; }
+
+    // Paragraph text of the component
     [Parameter]
     public string? Paragraph { get; set; }
+
+    // Text for the button in the component
     [Parameter]
     public string? ButtonText { get; set; }
+
+    // Visibility of the button in the component
     [Parameter]
     public bool Visible { get; set; } = true;
 }
