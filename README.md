@@ -6,7 +6,7 @@ All they need to do is to fill out a form, and after they submit - a free person
 <br/><br/>
 Note! - Each code block and written words in this project is 100% made with pair programming, by Daniel- and Jimmy Junttila.
 <br/><br/>
-![website will work in any media browser](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/footer.png)
+![website will work in any media browser](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/responsive_layout.png)
 <br/><br/>
 
 ## Features
@@ -18,7 +18,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - This full responsive navigation bar allow all users to easy navigate to all pages on this site, without the need of the "go back" button.
     - A logo is shown at left with a link to homepage.
 
-![navigation bar](/Wos-Gen/wwwroot/navbar.png)
+![navigation bar](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/navbar.png)
 <br/><br/>
 
  **Main image**
@@ -27,7 +27,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - And this image also got an overlay text, that tell the user that he/she is on the perfect site he/she was looking for.
     - Also a CTA button is connected, to the "Generator" page.
 
-![hero-image on homepage](Wos-Gen/wwwroot/hero_image.png)
+![hero-image on homepage](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/hero_image.png)
 <br/><br/>
 
  **ScheduleGuide section**
@@ -35,7 +35,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - This section got 3 "cards" with title, paragraph and icons. This guide let the user to easy understand how to generate a personalized workout schedule, with 3 steps only.
     - Below the guide there's a button that will take them to the "Generator" page.
 
-![ScheduleGuide section](./Wos-Gen/wwwroot/schedule_guide.png)
+![ScheduleGuide section](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/schedule_guide.png)
 <br/><br/>
 
  **Footer section**
@@ -43,7 +43,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - The footer section got 3 social media icons (facebook, twitter, instagram).
     - This section also have a copyright text (below the social media icons).
 
-![footer image](../Wos-Gen/wwwroot/footer.png)
+![footer image](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/footer.png)
 <br/><br/>
 
  **Generator page**
@@ -51,7 +51,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - The 'Generator' page have a banner (with a fitness girl) and a text that the user now can input their name, email and choose their specific options.
     - Below the banner there is a form with all the input fields the user needs to fill i.
 
-![generator form](./Wos-Gen/wwwroot/schedule_form.png)
+![generator form](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/schedule_form.png)
 <br/><br/>
 
  **The workout schedule**
@@ -61,7 +61,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - Name and Email field is regular text inputs, and 'Goal', 'Location' and 'Experience is dropdown option fields.
     - A 'spinner' is shown for 2,5s after user click the "Create Schedule" button, to simulate that the generator is "working".
 
-![generated schedule](./Wos-Gen/wwwroot/schedule_generated.png)
+![generated schedule](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/schedule_generated.png)
 <br/><br/>
 
 
@@ -77,7 +77,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - Heading font color: #000
     - Fonts used: 'Helvetica Neue' and Helvetica, Arial, sans-serif as "backup" fonts.
 
-<br/><br/>
+<br/>
 
 
 ## UX
@@ -142,7 +142,7 @@ RETURNING USER: User can come back anytime to check or change their workout sche
     - 'Track progress' function so users easily can follow their progress.
     - Create an app for smartphones, so users easily can stay up to date with their schedule.
     - Add more pages (contact, about, articles etc) and content to the website. 
-<br/><br/>
+<br/>
 
  **Site goal**
 
@@ -180,14 +180,14 @@ Manually tested all links (login button and social media icons is not yet connec
     - 'Lighthouse' with website tested, with good score (SEO is not yet implemented, will be updated in a future 'issue').
 
 
-![Lighthouse](./Wos-Gen/wwwroot/lighthouse.png)
+![Lighthouse](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/lighthouse.png)
 
 **xUnit tests**
 
     - 'UserTests.cs
     - 'WorkoutSchedule.cs
     All tests passed without any problems!
-<br/><br/>
+
 
 ## Bugs
 
