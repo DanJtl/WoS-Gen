@@ -6,7 +6,7 @@ All they need to do is to fill out a form, and after they submit - a free person
 <br/><br/>
 Note! - Each code block and written words in this project is 100% made with pair programming, by Daniel- and Jimmy Junttila.
 <br/><br/>
-![website will work in any media browser](../Wos-Gen/wwwroot/responsive_layout.png)
+![website will work in any media browser](https://github.com/DanJtl/WoS-Gen/blob/master/WoS-Gen/wwwroot/footer.png)
 <br/><br/>
 
 ## Features
