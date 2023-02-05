@@ -6,7 +6,7 @@ All they need to do is to fill out a form, and after they submit - a free person
 <br/><br/>
 Note! - Each code block and written words in this project is 100% made with pair programming, by Daniel- and Jimmy Junttila.
 <br/><br/>
-![website will work in any media browser](/responsive_layout.png)
+![website will work in any media browser](../Wos-Gen/wwwroot/responsive_layout.png)
 <br/><br/>
 
 ## Features
@@ -18,7 +18,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - This full responsive navigation bar allow all users to easy navigate to all pages on this site, without the need of the "go back" button.
     - A logo is shown at left with a link to homepage.
 
-![navigation bar](./Wos-Gen/wwwroot/navbar.png)
+![navigation bar](/Wos-Gen/wwwroot/navbar.png)
 <br/><br/>
 
  **Main image**
@@ -27,7 +27,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - And this image also got an overlay text, that tell the user that he/she is on the perfect site he/she was looking for.
     - Also a CTA button is connected, to the "Generator" page.
 
-![hero-image on homepage](./Wos-Gen/wwwroot/hero_image.png)
+![hero-image on homepage](Wos-Gen/wwwroot/hero_image.png)
 <br/><br/>
 
  **ScheduleGuide section**
@@ -35,7 +35,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - This section got 3 "cards" with title, paragraph and icons. This guide let the user to easy understand how to generate a personalized workout schedule, with 3 steps only.
     - Below the guide there's a button that will take them to the "Generator" page.
 
-![blogpost section](./Wos-Gen/wwwroot/schedule_guide.png)
+![ScheduleGuide section](./Wos-Gen/wwwroot/schedule_guide.png)
 <br/><br/>
 
  **Footer section**
@@ -43,7 +43,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - The footer section got 3 social media icons (facebook, twitter, instagram).
     - This section also have a copyright text (below the social media icons).
 
-![footer image](./Wos-Gen/wwwroot/footer.png)
+![footer image](../Wos-Gen/wwwroot/footer.png)
 <br/><br/>
 
  **Generator page**
@@ -51,7 +51,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - The 'Generator' page have a banner (with a fitness girl) and a text that the user now can input their name, email and choose their specific options.
     - Below the banner there is a form with all the input fields the user needs to fill i.
 
-![signup image](./Wos-Gen/wwwroot/schedule_form.png)
+![generator form](./Wos-Gen/wwwroot/schedule_form.png)
 <br/><br/>
 
  **The workout schedule**
@@ -61,7 +61,7 @@ Note! - Each code block and written words in this project is 100% made with pair
     - Name and Email field is regular text inputs, and 'Goal', 'Location' and 'Experience is dropdown option fields.
     - A 'spinner' is shown for 2,5s after user click the "Create Schedule" button, to simulate that the generator is "working".
 
-![login image](./Wos-Gen/wwwroot/schedule_generated.png)
+![generated schedule](./Wos-Gen/wwwroot/schedule_generated.png)
 <br/><br/>
 
 
@@ -199,7 +199,7 @@ Manually tested all links (login button and social media icons is not yet connec
 
 ## Technologies
 
-* **Languages used**
+ **Languages used**
 
     - HTML
     - CSS
@@ -222,14 +222,13 @@ Manually tested all links (login button and social media icons is not yet connec
 
     - Fonts imported from https://fonts.google.com/
     - Color palette picked from https://colorhunt.co/
-<br/><br/>
 
  **Media**
 
     - All the images taken from https://www.canva.com/
     - The icons is taken from bootstrap icons.
     - Used Canva for scaling the images.
-<br/><br/>
+
 
 
 [Back to Top](#FITMASTER)
