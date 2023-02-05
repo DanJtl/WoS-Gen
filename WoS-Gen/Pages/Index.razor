@@ -1,9 +1,22 @@
 ﻿@page "/"
+@using WoS_Gen
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Welcome to FITMASTER!</PageTitle>
 
-<h1>Hello, world!</h1>
+<section class="hero-image">
+    <HeroSection 
+        Title="Start Generate Your Workout Schedule Today!" 
+        Paragraph="
+                Are you tired of feeling unmotivated and uninspired with your workout routine? 
+                Look no further! Our workout schedule generator is here to revolutionize the way you approach your fitness journey. 
+                With our state-of-the-art algorithm, you'll receive a personalized workout schedule tailored to your individual goals, 
+                fitness level and schedule. Try it now and experience the difference for yourself!
+            "
+        ButtonText="Start Generate!"
+        Visible="true"
+    />
+</section>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<section>
+    <ScheduleGuide />
+</section>

@@ -1,0 +1,142 @@
+﻿@page "/generator"
+@using WoS_Gen
+@using WoS_Gen.Models
+@using System.Threading.Tasks;
+
+<PageTitle>Schedule Generator</PageTitle>
+
+<section class="banner-image">
+    <HeroSection 
+        Title="Start Generating Below" 
+        Paragraph="
+                Start with filling in your input, then click the button to generate and 
+                see your personalized workout Schedule!
+            "
+        ButtonText="Generate Now!"
+        Visible="false"     
+    />
+</section>
+
+<section class="container col-10 col-lg-6 p-5 my-5 shadow bg-light">
+    <EditForm Model="user" OnInvalidSubmit="HandleSubmit">
+        <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Fullname:</label>
+            <div class="col-sm-10">
+                <InputText id="name" @bind-Value="user.Name" class="form-control" required></InputText>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="email" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-10">
+                <InputText id="email" @bind-Value="user.Email" class="form-control" type="email" required></InputText>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="goal" class="col-sm-2 col-form-label">Goal:</label>
+            <div class="col-sm-10 pt-2">
+                <InputSelect required @bind-Value="user.WorkoutGoal">
+                    <option value="">Choose your goal...</option>
+                    <option value="LoseWeight">LoseWeight</option>
+                    <option value="BuildMuscles">BuildMuscles</option>
+                </InputSelect>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="location" class="col-sm-2 col-form-label">Location:</label>
+            <div class="col-sm-10 pt-2">
+                <InputSelect required @bind-Value="user.Location">
+                    <option value="">Choose your location</option>
+                    <option value="Gym">Gym</option>
+                    <option value="Home">Home</option>
+                </InputSelect>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="experience" class="col-sm-2 col-form-label">Experience:</label>
+            <div class="col-sm-10 pt-2">
+                <InputSelect required @bind-Value="user.Experience">
+                    <option value="">Your experience</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Novice">Novice</option>
+                </InputSelect>
+            </div>
+        </div>
+        <div class="d-flex flex-column justify-content-center">
+            <button type="submit" @onclick="HandleSubmit" class="btn btn-lg btn-primary p-2 fw-bolder">Create Schedule <i class="bi bi-calendar-event"></i></button>
+        </div>
+    </EditForm>
+</section>
+
+<section class="container pt-3 ">
+    @{
+        var dayIndex = 0;
+        List<string> weekDays = new List<string>() {
+            "Monday", "Tuesday", "Wednesday", "Thursday",
+            "Friday", "Saturday", "Sunday" };
+    }
+
+    @if (showSpinner)
+    {
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    }
+    
+    @foreach (var user in users)
+    {
+        <h3 class="text-center mb-3">Hi @user.Name! Here is your workout schedule:</h3>
+        @foreach (var workout in schedule.GeneratePlan(user.WorkoutGoal, user.Location, user.Experience))
+        {
+            <Schedule Day="@weekDays[dayIndex]"
+                Workout="@workout" />
+            dayIndex++;
+        }
+    }
+    
+</section>
+
+@code {
+    // Declare a static list of User objects, and initialize a User and WorkoutSchedule object
+    static List<User> users = new List<User>();
+    User user = new User("", "", "", "", "");
+    WorkoutSchedule schedule = new WorkoutSchedule();
+
+    // Declare a boolean variable to track the visibility of the spinner
+    private bool showSpinner = false;
+
+    // Async method to handle the 'form submission'
+    private async void HandleSubmit()
+    {
+        if (string.IsNullOrWhiteSpace(user.Name) || string.IsNullOrWhiteSpace(user.Email) || 
+            string.IsNullOrWhiteSpace(user.Location) || string.IsNullOrWhiteSpace(user.WorkoutGoal) || 
+            string.IsNullOrWhiteSpace(user.Experience))
+        {
+            return;
+        }
+        else
+        {
+            // Check if a user with the same name and email exists in the users list
+            User? existingUser = users.Find(u => u.Name == user.Name && u.Email == user.Email);
+            if (existingUser == null)
+            {
+                // If not, add the user to the list and generate a new schedule, with a 'spinner' showing before schedule appears
+                showSpinner = true;
+                await Task.Delay(2500);
+                showSpinner = false;
+                users.Add(user);
+                // Call the StateHasChanged method to update the UI
+                StateHasChanged();
+            }
+            else
+            {
+                // If yes, retrieve the existing schedule
+                user = existingUser;
+            }
+        }
+        // Remove the last item from the users list
+        int lastItem = users.Count - 1;
+        users.RemoveAt(lastItem);
+    }
+}

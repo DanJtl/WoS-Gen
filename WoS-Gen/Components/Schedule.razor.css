@@ -1,0 +1,106 @@
+﻿.plan .classes-details ul.timetable {
+    margin: 0 0 22px;
+    padding: 0;
+}
+
+    .plan .classes-details ul.timetable li {
+        list-style: none;
+        font-size: 15px;
+        color: #7f7f7f;
+    }
+.plan {
+    max-width: 850px;
+}
+
+.plan .timetable {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.plan .timetable-item {
+    border: 1px solid #d8e3eb;
+    padding: 15px;
+    margin-top: 20px;
+    position: relative;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .plan .timetable-item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+
+.plan .timetable-item-img {
+    overflow: hidden;
+    height: 100px;
+    width: 100px;
+    display: none;
+}
+
+    .plan .timetable-item-img img {
+        height: 100%;
+    }
+
+@media (min-width: 768px) {
+    .plan .timetable-item-img {
+        display: block;
+    }
+}
+
+.plan .timetable-item-main {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    margin-top: 12px;
+}
+
+@media (min-width: 768px) {
+    .plan .timetable-item-main {
+        margin-top: 0;
+        padding-left: 15px;
+    }
+}
+
+.plan .timetable-item-time {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.plan .timetable-item-name {
+    font-size: 14px;
+    margin-bottom: 19px;
+}
+
+.plan .schedule .nav-link {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3d3d3d;
+    font-weight: 500;
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+    border-radius: 2px 2px 0 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 768px) {
+    .plan .schedule .nav-link {
+        font-size: 16px;
+    }
+}
+
+.plan .schedule .nav-link.active {
+    background: #104455;
+    border-color: #104455;
+    color: #fff;
+}

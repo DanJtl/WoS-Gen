@@ -1,0 +1,14 @@
+﻿.hero-section {
+    width: 100%;
+    min-height: 75vh;
+    padding: 2rem 0;
+}
+
+h1 {
+    text-shadow: 1px 1px #fff;
+}
+
+p {
+    text-shadow: 1px 1px #000;
+    font-weight: 500;
+}
